@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './[id].less';
+@import '../package/timeline/css/timeline.css';
+
+@layer base {
+  html,
+  body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f5;
+  }
+
+  pre > code {
+    background-color: #1d1d25 !important;
+    @apply font-light;
+  }
+
+  ol {
+    @apply list-inside list-disc;
+
+    p {
+      @apply inline-block;
+    }
+  }
+
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+
+  h2 {
+    @apply text-xl font-semibold;
+  }
+
+  h3 {
+    @apply text-lg font-semibold;
+  }
+
+  h4 {
+    @apply text-lg font-semibold;
+  }
+}
+
+// @layer components {
+//   .timeline-nav-button--prev {
+//     font-size: 20px !important;
+//     text-indent: 1px !important;
+    
+//     &::content {
+//       content: '<';
+//       display: block;
+//       width: 10px;
+//       height:10px;
+//       color: black;
+//       background-image: none;
+//     }
+//   }
+//   .timeline-nav-button::content {
+//       content: '<';
+//       display: block;
+//       width: 10px;
+//       height:10px;
+//       color: black;
+//       background-image: none;
+    
+//   }
+// }

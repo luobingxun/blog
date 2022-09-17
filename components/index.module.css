@@ -1,0 +1,6 @@
+.main{
+  /* height: 100vh; */
+  background-image: url('../public/qq_bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
