@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Head from 'next/head';
 import Footer from './Footer';
@@ -14,6 +14,9 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ title, keywords, description, children, hasFooter = true, BGTitle }) => {
+  // useEffect(() => {
+  //   document.documentElement.classList.add('dark');
+  // }, []);
   return (
     <>
       <Head>

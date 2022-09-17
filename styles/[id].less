@@ -4,7 +4,7 @@
   }
 
   .article-container {
-    @apply md:flex mx-4 md:m-auto z-10 py-4 md:w-8/12;
+    @apply md:flex mx-4 md:m-auto z-10 py-4;
   }
 
   .article {
@@ -64,5 +64,12 @@
       --webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       background-color: rgba(75, 85, 99, 0.1);
     }
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .article-content {
+    width: 1108px;
   }
 }

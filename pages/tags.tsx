@@ -16,7 +16,7 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
 
   return (
     <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-3xl">标签</h1>}>
-      <div className="md:m-auto bg-white z-10 m-4 md:w-7/12 rounded">
+      <div className="md:m-auto bg-white z-10 m-4 rounded tag-panel">
         <h1 className="text-base p-4 border-b border-gray-200 ">标签</h1>
         <div className="mx-8 mt-20">
           <div className="text-center">

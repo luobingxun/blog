@@ -54,14 +54,12 @@ const Header: React.FC = () => {
             </li>
           ))}
           <li className="float-left ml-8">
-            <Link href={''}>
-              <a>
-                <GitHub
-                  className="hidden md:block transform translate-y-px w-6 h-6"
-                  fill={isHeaderScrollTop ? 'white' : 'black'}
-                />
-              </a>
-            </Link>
+            <a href="https://github.com/xlz-cloud/blog" target="_black">
+              <GitHub
+                className="hidden md:block transform translate-y-px w-6 h-6"
+                fill={isHeaderScrollTop ? 'white' : 'black'}
+              />
+            </a>
           </li>
           <li className="float-left ml-8 ">
             {isDark ? (

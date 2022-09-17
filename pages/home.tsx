@@ -12,8 +12,8 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ homeDa
   const topData = homeData.sort((prev, next) => dayjs(prev.date).unix() - dayjs(next.date).unix()).slice(0, 5);
   return (
     <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-3xl">主页</h1>}>
-      <div className="flex m-auto z-10 py-4 md:w-7/12 ">
-        <ul className="mx-4 bg-white rounded flex-1 md:min-w-min">
+      <div className="flex m-auto z-10 py-4  article-panel dark:bg-black">
+        <ul className="mx-4 flex-1 bg-white rounded flex-1 ">
           <h1 className="text-base p-4 border-b border-gray-200 ">系列文章</h1>
           {homeData.map(v => (
             <li key={v.id}>
@@ -21,7 +21,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ homeDa
             </li>
           ))}
         </ul>
-        <div className=" hidden md:block w-60 h-80 ml-4 bg-white sticky top-24 rounded divide-y">
+        <div className=" hidden md:block w-60 h-80 bg-white sticky top-24 rounded divide-y">
           <h3 className="text-base p-4">最新发布</h3>
           <ul className="text-sm">
             {topData.map(v => (
