@@ -11,9 +11,9 @@ import type { StaticDataProps } from '../types/interface';
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ homeData }) => {
   const topData = homeData.sort((prev, next) => dayjs(prev.date).unix() - dayjs(next.date).unix()).slice(0, 5);
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-3xl">主页</h1>}>
-      <div className="flex m-auto z-10 py-4  article-panel dark:bg-black">
-        <ul className="mx-4 flex-1 bg-white rounded flex-1 ">
+    <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-xl md:text-3xl">主页</h1>}>
+      <div className="flex m-auto z-10 py-2 md:py-4  article-panel dark:bg-black">
+        <ul className="mx-2 md:mx-4 flex-1 bg-white rounded flex-1 ">
           <h1 className="text-base p-4 border-b border-gray-200 ">系列文章</h1>
           {homeData.map(v => (
             <li key={v.id}>

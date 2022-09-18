@@ -15,8 +15,8 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
   };
 
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-3xl">标签</h1>}>
-      <div className="md:m-auto bg-white z-10 m-4 rounded tag-panel">
+    <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-xl md:text-3xl">标签</h1>}>
+      <div className="mx-2 md:mx-auto bg-white z-10 my-2 md:my-4 rounded tag-panel">
         <h1 className="text-base p-4 border-b border-gray-200 ">标签</h1>
         <div className="mx-8 mt-20">
           <div className="text-center">
@@ -40,7 +40,7 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
                   <div className="flex items-center clear-left">
                     <span className="flex-1 h-px bg-gray-200"></span>
                     <h3
-                      className="text-center box-border py-2 px-4 mx-2 text-sm bg-gray-100 rounded"
+                      className="text-center box-border py-2 px-4 text-sm bg-gray-100 rounded"
                       style={{ color: tagsColors[idx], scrollPaddingTop: 70 }}
                       id={v.tag}
                     >

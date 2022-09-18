@@ -43,7 +43,7 @@ const Header: React.FC = () => {
     >
       <nav className="h-full mx-2 md:mx-40 flex justify-between items-center">
         <Link href="/">
-          <a className="ml-5 md:text-2xl">{`DAVID'S BLOG`}</a>
+          <a className="ml-5 md:text-2xl">{`BLOG`}</a>
         </Link>
         <ul className="float-right text-sm md:text-base">
           {tabs.map(({ name, link }) => (
@@ -61,18 +61,16 @@ const Header: React.FC = () => {
               />
             </a>
           </li>
-          <li className="float-left ml-8 ">
+          <li className="float-left ml-8 " onClick={onClick}>
             {isDark ? (
               <BlackMode
                 className="cursor-pointer w-4 h-4 md:w-6 md:h-6 transform translate-y-px text-white"
-                onClick={onClick}
                 fill={isHeaderScrollTop ? 'white' : 'black'}
               />
             ) : (
               <WhiteMode
                 fill={isHeaderScrollTop ? 'white' : 'black'}
                 className="cursor-pointer  w-4 h-4 md:w-6 md:h-6 transform translate-y-px text-white"
-                onClick={onClick}
               />
             )}
           </li>

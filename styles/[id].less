@@ -4,7 +4,13 @@
   }
 
   .article-container {
-    @apply md:flex mx-4 md:m-auto z-10 py-4;
+    @apply md:flex mx-2 md:mx-auto z-10 py-2;
+  }
+
+  @media (min-width: 1200px) {
+    .article-container {
+      width: 1108px;
+    }
   }
 
   .article {
@@ -68,8 +74,4 @@
 }
 
 
-@media (min-width: 1200px) {
-  .article-content {
-    width: 1108px;
-  }
-}
+

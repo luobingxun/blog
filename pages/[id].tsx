@@ -21,17 +21,17 @@ const Article: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ con
   }, []);
 
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="layout-title">{title}</h1>}>
-      <div className="article-container article-content">
+    <Layout description="" keywords="" title="" BGTitle={<h1 className="layout-title text-xl md:text-3xl">{title}</h1>}>
+      <div className="article-container">
         <article className="article">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </article>
-        <div className="category">
+        <nav className="category">
           <h3 className="category-title">目录</h3>
           <div className="category-nav">
             <MarkNav headingTopOffset={-300} className="toc-list" source={content} ordered={false} />
           </div>
-        </div>
+        </nav>
       </div>
     </Layout>
   );
