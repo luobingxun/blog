@@ -5,6 +5,7 @@
 @import './[id].less';
 @import './home.less';
 @import './tags.less';
+@import './time-line.less';
 @import '../package/timeline/css/timeline.css';
 
 @layer base {
@@ -46,27 +47,19 @@
   }
 }
 
-// @layer components {
-//   .timeline-nav-button--prev {
-//     font-size: 20px !important;
-//     text-indent: 1px !important;
-    
-//     &::content {
-//       content: '<';
-//       display: block;
-//       width: 10px;
-//       height:10px;
-//       color: black;
-//       background-image: none;
-//     }
-//   }
-//   .timeline-nav-button::content {
-//       content: '<';
-//       display: block;
-//       width: 10px;
-//       height:10px;
-//       color: black;
-//       background-image: none;
-    
-//   }
-// }
+@layer components {
+  @media (max-width: 767px) {
+    .home-text {
+      @apply absolute top-1/2 left-1/2 transform  -translate-y-2/3 -translate-x-1/2 text-white whitespace-nowrap;
+    }
+  }
+  @media (min-width: 767px) {
+    .home-text {
+      @apply absolute top-1/2 transform  text-white whitespace-nowrap  -translate-y-40 ml-40;
+    }
+  }
+
+  .btn{
+   @apply border-2 border-white h-8 w-20 text-sm md:h-12 md:w-24 rounded-lg; 
+  }
+}

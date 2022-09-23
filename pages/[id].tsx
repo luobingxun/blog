@@ -6,12 +6,13 @@ import { getHomeDescription } from '../libs/getHomeDescription';
 import type { StaticDataProps } from '../types/interface';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/a11y-dark.css';
 import ReactMarkdown from 'react-markdown';
-import 'github-markdown-css';
 import remarkGfm from 'remark-gfm'; // markdown 对表格/删除线/脚注等的支持
-import MarkNav from 'markdown-navbar'; // markdown 目录
+import MarkNav from 'markdown-navbar';
+// markdown 目录
 import 'markdown-navbar/dist/navbar.css';
+import 'highlight.js/styles/a11y-dark.css';
+import 'github-markdown-css';
 
 hljs.registerLanguage('javascript', javascript);
 
@@ -21,7 +22,7 @@ const Article: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ con
   }, []);
 
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="layout-title text-xl md:text-3xl">{title}</h1>}>
+    <Layout description="" keywords="" title="" BGTitle={<h1 className="title">{title}</h1>}>
       <div className="article-container">
         <article className="article">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>

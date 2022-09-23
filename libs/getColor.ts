@@ -1,6 +1,1 @@
-export const getColor = () => {
-  const r = Math.floor(Math.random() * 255);
-  const g = Math.floor(Math.random() * 255);
-  const b = Math.floor(Math.random() * 255);
-  return `rgba(${r},${g},${b})`;
-};
+export const getColor = () => `#${Math.random().toString(16).slice(-6)}`;

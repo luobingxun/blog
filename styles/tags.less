@@ -3,3 +3,33 @@
     width: 970px;
   }
 }
+
+@layer components {
+  .tags-title {
+    @apply text-white text-xl md:text-3xl;
+  }
+
+  .tags {
+    &-container {
+      @apply mx-2 md:mx-auto bg-white z-10 my-2 md:my-4 rounded tag-panel;
+
+      &-title {
+        @apply text-base p-4 border-b border-gray-200;
+      }
+
+      &-link {
+        @apply text-sm hover:bg-gray-200 transform hover:scale-105 inline-block 
+        box-border py-2 mb-3 cursor-pointer px-4 mx-2 bg-gray-100 rounded;
+      }
+
+      &-tag {
+        @apply text-center box-border py-2 px-4 text-sm bg-gray-100 rounded;
+      }
+    }
+
+    &-article-link {
+      @apply py-2 text-sm box-border py-2 px-4 m-2 bg-gray-100 rounded 
+      hover:underline hover:bg-gray-200 transform hover:scale-105 inline-block;
+    }
+  }
+}

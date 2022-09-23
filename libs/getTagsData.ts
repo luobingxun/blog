@@ -8,8 +8,8 @@ interface TagsDataProps {
   }[];
 }
 
-const getTagsData = (originData: StaticDataProps[]): TagsDataProps[] => {
-  return originData
+const getTagsData = (originData: StaticDataProps[]): TagsDataProps[] =>
+  originData
     .map(item =>
       item.tags.map(v => ({
         tag: v,
@@ -27,6 +27,5 @@ const getTagsData = (originData: StaticDataProps[]): TagsDataProps[] => {
         return [...acc, { tag: curr.tag, info: [{ title: curr.title, id: curr.id }] }];
       }
     }, []);
-};
 
 export { getTagsData };

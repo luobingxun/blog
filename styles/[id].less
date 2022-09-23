@@ -7,6 +7,10 @@
     @apply md:flex mx-2 md:mx-auto z-10 py-2;
   }
 
+  .title {
+    @apply layout-title text-xl md:text-3xl;
+  }
+
   @media (min-width: 1200px) {
     .article-container {
       width: 1108px;
@@ -15,13 +19,19 @@
 
   .article {
     @apply font-normal rounded bg-white p-4 md:p-6 md:flex-1 md:w-2/3;
-    p{
+    p {
       color: #333;
     }
     ul {
       @apply list-decimal;
-      li{
+      li {
         @apply ml-4;
+      }
+    }
+
+    pre {
+      code {
+        @apply rounded-lg;
       }
     }
   }
@@ -41,7 +51,7 @@
   .category {
     @apply hidden md:block ml-4 bg-white px-1 divide-y rounded  sticky top-24;
     max-height: 600px;
-    width:300px;
+    width: 300px;
 
     &-title {
       @apply font-normal p-3;
@@ -72,6 +82,3 @@
     }
   }
 }
-
-
-

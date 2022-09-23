@@ -1,0 +1,19 @@
+@layer components {
+  .time-line {
+    &-title {
+      @apply text-white text-xl md:text-3xl;
+    }
+
+    &-container {
+      @apply md:w-4/5  m-auto z-10 my-4 px-4;
+
+      &-title {
+        @apply text-base py-4 border-b;
+      }
+
+      &-link {
+        @apply py-3 hover:bg-gray-50 transform md:hover:scale-105 duration-500;
+      }
+    }
+  }
+}

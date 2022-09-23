@@ -13,7 +13,7 @@ const tabs: {
 }[] = [
   {
     link: '/home',
-    name: '主页'
+    name: '文章'
   },
   {
     link: '/tags',
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
     >
       <nav className="h-full mx-2 md:mx-40 flex justify-between items-center">
         <Link href="/">
-          <a className="ml-5 md:text-2xl">{`BLOG`}</a>
+          <a className="ml-5 md:text-2xl">BLOG</a>
         </Link>
         <ul className="float-right text-sm md:text-base">
           {tabs.map(({ name, link }) => (

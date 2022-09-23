@@ -3,3 +3,30 @@
     width: 1015px;
   }
 }
+
+@layer components {
+  .home-title {
+    @apply text-white text-xl md:text-3xl;
+  }
+
+  .home {
+    &-container {
+      @apply flex m-auto z-10 py-2 md:py-4  article-panel;
+    }
+
+    &-list {
+      @apply mx-2 md:mx-4 flex-1 bg-white rounded flex-1;
+
+      &-title {
+        @apply text-base p-4 border-b border-gray-200;
+      }
+    }
+
+    &-side {
+      @apply hidden md:block w-60 h-80 bg-white sticky top-24 rounded divide-y;
+      &-item {
+        @apply py-2 px-4 w-full truncate text-gray-600 hover:bg-gray-50 flex flex-col justify-center;
+      }
+    }
+  }
+}

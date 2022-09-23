@@ -17,9 +17,9 @@ const TimeLine: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({ originDat
   }, []);
 
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="text-white text-xl md:text-3xl">时间线</h1>}>
-      <div className="md:w-4/5  m-auto z-10 my-4 px-4 ">
-        <h1 className="text-base py-4 border-b border-gray ">时间线</h1>
+    <Layout description="" keywords="" title="" BGTitle={<h1 className="time-line-title">时间线</h1>}>
+      <div className="time-line-container">
+        <h1 className="time-line-container-title">时间线</h1>
         <div className="timeline my-4">
           <div className="timeline__wrap">
             <div className="timeline__items">
@@ -27,7 +27,7 @@ const TimeLine: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({ originDat
                 <div className="timeline__item" key={v.id}>
                   <Link href="/[id]" as={`/${v.id}`}>
                     <a>
-                      <div className="timeline__content  py-3 hover:bg-gray-50 transform md:hover:scale-105 duration-500 ">
+                      <div className="timeline__content time-line-container-link">
                         <h2>{v.date}</h2>
                         <h4>{v.title}</h4>
                         <p className="text-gray-600" style={{ fontSize: '0.875rem !important' }}>
