@@ -1,0 +1,114 @@
+@layer components {
+  .header {
+    @apply h-20 w-full fixed z-10 duration-700;
+    &-is-top {
+      @apply bg-none text-white;
+    }
+
+    &-not-top {
+      @apply text-black bg-white shadow-lg;
+    }
+
+    &-nav {
+      @apply h-full mx-2 md:mx-40 flex justify-between items-center;
+
+      &-logo {
+        @apply ml-5 md:text-base;
+      }
+
+      &-ul {
+        @apply float-right text-sm md:text-base;
+
+        &-li {
+          @apply float-left ml-8;
+        }
+
+        &-github {
+          @apply float-left ml-8;
+          &-svg {
+            @apply hidden md:block transform translate-y-px w-6 h-6;
+          }
+        }
+
+        &-mode {
+          @apply float-left ml-8;
+
+          &-btn{
+            @apply border border-gray-300 rounded-full text-sm w-12 h-6;
+          }
+
+          &-black{
+            @apply cursor-pointer w-4 h-4 md:w-4 md:h-4 rounded-lg transform translate-y-px text-white;
+          }
+
+          &-dark{
+            @apply cursor-pointer w-4 h-4 md:w-3 md:h-3 transform translate-y-px text-white;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    background-image: url('../../public/qq_bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @apply pt-20;
+  }
+
+  .not-index{
+    @apply h-96 flex justify-center items-center;
+   
+    &-bg{
+      @apply  relative -top-10;
+    }
+
+    &-container{
+      @apply  relative;
+      min-height: calc(100vh - 24rem - 9rem);
+    }
+  }
+
+  .is-index{
+    @apply h-screen;
+
+    &-container{
+      @apply h-full relative overflow-hidden;
+    }
+  }
+
+  .footer {
+    @apply h-28 bg-white flex justify-center items-center;
+  }
+}
+
+
+@layer utilities{
+  .title-animation{
+    animation: title-fade .4s ease-in;
+  }
+
+  @keyframes title-fade {
+    from {
+      @apply relative -top-5;
+    }
+
+    to {
+      @apply relative -top-10;
+    }
+  }
+
+  .header-animation{
+    animation: bg-fade .4s ease-in;
+  }
+
+  @keyframes bg-fade {
+    from {
+      @apply bg-white;
+    }
+
+    to {
+      @apply bg-none;
+    }
+  }
+}

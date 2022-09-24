@@ -9,7 +9,6 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'; // markdown 对表格/删除线/脚注等的支持
 import MarkNav from 'markdown-navbar';
-// markdown 目录
 import 'markdown-navbar/dist/navbar.css';
 import 'highlight.js/styles/a11y-dark.css';
 import 'github-markdown-css';
@@ -23,7 +22,7 @@ const Article: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ con
 
   return (
     <Layout description="" keywords="" title="" BGTitle={<h1 className="title">{title}</h1>}>
-      <div className="article-container">
+      <div className="article-container common-animation">
         <article className="article">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </article>

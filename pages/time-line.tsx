@@ -18,7 +18,7 @@ const TimeLine: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({ originDat
 
   return (
     <Layout description="" keywords="" title="" BGTitle={<h1 className="time-line-title">时间线</h1>}>
-      <div className="time-line-container">
+      <div className="time-line-container common-animation">
         <h1 className="time-line-container-title">时间线</h1>
         <div className="timeline my-4">
           <div className="timeline__wrap">

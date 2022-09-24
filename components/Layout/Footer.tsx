@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="h-36 bg-white flex justify-center items-center">
+    <footer className="footer">
       <div className="text-center">
         © 2022 | Proudly powered by&nbsp;
         <Link href="https://www.nextjs.cn/">

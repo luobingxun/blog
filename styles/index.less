@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 @import './[id].less';
-@import './home.less';
+@import './article.less';
 @import './tags.less';
 @import './time-line.less';
 @import '../package/timeline/css/timeline.css';
+@import '../components/index.less';
 
 @layer base {
   html,
@@ -59,7 +60,23 @@
     }
   }
 
-  .btn{
-   @apply border-2 border-white h-8 w-20 text-sm md:h-12 md:w-24 rounded-lg; 
+  .btn {
+    @apply border-2 border-white h-8 w-20 text-sm md:h-12 md:w-24 rounded-lg;
+  }
+}
+
+@layer utilities {
+  .common-animation {
+    animation: fade .4s ease-in;
+  }
+
+  @keyframes fade {
+    from {
+      @apply mt-8 opacity-0;
+    }
+
+    to {
+      @apply mt-4 opacity-100;
+    }
   }
 }

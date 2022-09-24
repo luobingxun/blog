@@ -12,7 +12,7 @@ const tabs: {
   icon?: ReactNode;
 }[] = [
   {
-    link: '/home',
+    link: '/article',
     name: '文章'
   },
   {
@@ -36,43 +36,36 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={classnames('h-20 w-full fixed z-10 duration-700', {
-        ['bg-none text-white']: isHeaderScrollTop,
-        ['opacity-1 text-black bg-white shadow-lg ']: !isHeaderScrollTop
+      className={classnames('header header-animation', {
+        ['header-is-top']: isHeaderScrollTop,
+        ['header-not-top']: !isHeaderScrollTop
       })}
     >
-      <nav className="h-full mx-2 md:mx-40 flex justify-between items-center">
+      <nav className="header-nav">
         <Link href="/">
-          <a className="ml-5 md:text-2xl">BLOG</a>
+          <a className="header-nav-logo">主页</a>
         </Link>
-        <ul className="float-right text-sm md:text-base">
+        <ul className="header-nav-ul">
           {tabs.map(({ name, link }) => (
-            <li className="float-left ml-8" key={link}>
+            <li className="header-nav-ul-li" key={link}>
               <Link href={link}>
                 <a>{name}</a>
               </Link>
             </li>
           ))}
-          <li className="float-left ml-8">
+          <li className="header-nav-ul-github">
             <a href="https://github.com/xlz-cloud/blog" target="_black">
-              <GitHub
-                className="hidden md:block transform translate-y-px w-6 h-6"
-                fill={isHeaderScrollTop ? 'white' : 'black'}
-              />
+              <GitHub className="header-nav-ul-github-svg" fill={isHeaderScrollTop ? 'white' : 'black'} />
             </a>
           </li>
-          <li className="float-left ml-8 " onClick={onClick}>
-            {isDark ? (
-              <BlackMode
-                className="cursor-pointer w-4 h-4 md:w-6 md:h-6 transform translate-y-px text-white"
-                fill={isHeaderScrollTop ? 'white' : 'black'}
-              />
-            ) : (
-              <WhiteMode
-                fill={isHeaderScrollTop ? 'white' : 'black'}
-                className="cursor-pointer  w-4 h-4 md:w-6 md:h-6 transform translate-y-px text-white"
-              />
-            )}
+          <li className="header-nav-ul-mode" onClick={onClick}>
+            <button className="header-nav-ul-mode-btn">
+              {isDark ? (
+                <BlackMode className="header-nav-ul-mode-black" fill={isHeaderScrollTop ? 'white' : 'black'} />
+              ) : (
+                <WhiteMode className="header-nav-ul-mode-dark" fill={isHeaderScrollTop ? 'white' : 'black'} />
+              )}
+            </button>
           </li>
         </ul>
       </nav>

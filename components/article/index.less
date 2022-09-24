@@ -1,0 +1,30 @@
+@layer components {
+  .description {
+    &-container {
+      @apply px-5 border-b border-gray-200 border-solid hover:bg-gray-50;
+
+      &-title{
+        @apply text-base font-semibold mb-4 pt-4 truncate w-full;
+      }
+
+      &-date{
+        @apply mb-2 text-xs;
+      }
+
+      &-tag{
+        @apply inline-block mb-2 px-2 py-1 align-middle text-xs mr-1 bg-gray-100 rounded hover:underline;
+      }
+
+      &-note {
+        @apply mb-4 text-sm text-gray-600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        max-height: 3.75rem;
+      }
+    }
+  }
+}

@@ -2,14 +2,14 @@
   {
     "id": "ajax-basic",
     "title": "ajax文档学习",
-    "description": "typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用...",
-    "tags": ["js", "ajax","gg","ff","tt","wefsd", "sdfsdf", "sdfdsf"],
+    "description": "typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用...",
+    "tags": ["js", "ajax", "gg", "ff", "tt", "wefsd", "sdfsdf", "sdfdsf"],
     "date": "2020-01-01"
   },
   {
     "id": "es6-es12",
     "title": "React Hooks原理探究",
-    "description": "typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用...",
+    "description": "typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用...",
     "tags": ["typescript", "js"],
     "date": "2020-01-01"
   },
@@ -38,7 +38,7 @@
     "id": "promise-origin",
     "title": "TypeScript1",
     "description": "typescript中高级类型在实际项目中的应用typescript中高级类型在实际项目中的应用...",
-    "tags": [ "promise", "js"],
+    "tags": ["promise", "js"],
     "date": "2020-01-01"
   },
   {

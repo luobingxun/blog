@@ -1,6 +1,5 @@
-import React, { ReactNode, useEffect, useState } from 'react';
-
-import styles from '../index.module.css';
+import React from 'react';
+import type { ReactNode } from 'react';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 
@@ -16,22 +15,18 @@ const Main: React.FC<LayoutProps> = ({ children, BGTitle }) => {
   return (
     <main>
       <div
-        className={classNames('pt-20', styles.main, {
-          ['h-96 flex justify-center items-center']: !isIndex,
-          ['h-screen ']: isIndex
+        className={classNames('main', {
+          ['not-index']: !isIndex,
+          ['is-index']: isIndex
         })}
       >
         {isIndex ? (
-          <div className="h-full relative overflow-hidden">{children}</div>
+          <div className="is-index-container">{children}</div>
         ) : (
-          <div className="transform -translate-y-10">{BGTitle}</div>
+          <div className="not-index-bg title-animation">{BGTitle}</div>
         )}
       </div>
-      {!isIndex && (
-        <div className="relative" style={{ minHeight: 'calc(100vh - 24rem - 9rem' }}>
-          {children}
-        </div>
-      )}
+      {!isIndex && <div className="not-index-container">{children}</div>}
     </main>
   );
 };
