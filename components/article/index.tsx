@@ -1,10 +1,5 @@
 import Link from 'next/link';
 import { formmatDatetime } from '../../libs/date';
-import type { StaticDataProps } from '../../types/interface';
-
-interface DescriptionItemProps extends Omit<StaticDataProps, 'tags'> {
-  tags: { name: string; color: string }[];
-}
 
 const DescriptionItem: React.FC<{ articleData }> = ({ articleData }) => (
   <ul className="article-list">
