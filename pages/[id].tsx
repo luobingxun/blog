@@ -21,7 +21,7 @@ const Article: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ con
   }, []);
 
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="title">{title}</h1>}>
+    <Layout description="" keywords="" title={title} BGTitle={<h1 className="title">{title}</h1>}>
       <div className="article-container common-animation">
         <article className="article">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>

@@ -11,25 +11,25 @@
 
   .tags {
     &-container {
-      @apply mx-2 md:mx-auto bg-white z-10 my-4 rounded tag-panel;
+      @apply mx-2 md:mx-auto  z-10 my-4 rounded tag-panel;
 
       &-title {
-        @apply text-base p-4 border-b border-gray-200;
+        @apply text-3xl p-4;
       }
 
       &-link {
-        @apply text-sm hover:bg-gray-200 transform hover:scale-105 inline-block 
-        box-border py-2 mb-3 cursor-pointer px-4 mx-2 bg-gray-100 rounded;
+        @apply text-sm hover:bg-gray-300 transform hover:scale-105 inline-block 
+        box-border py-2 mb-3 cursor-pointer px-4 mx-2 bg-gray-200 rounded;
       }
 
       &-tag {
-        @apply text-center box-border py-2 px-4 text-sm bg-gray-100 rounded;
+        @apply text-center box-border py-2 px-4 text-sm bg-gray-200 rounded inline-block;
       }
     }
 
     &-article-link {
-      @apply py-2 text-sm box-border py-2 px-4 m-2 bg-gray-100 rounded 
-      hover:underline hover:bg-gray-200 transform hover:scale-105 inline-block;
+      @apply py-2 box-border py-2 px-4 m-2  rounded  text-xl font-semibold 
+      hover:text-red-600 transform hover:scale-105 inline-block;
     }
   }
 }

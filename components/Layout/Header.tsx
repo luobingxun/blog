@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import BlackMode from '../../public/icons/black.svg';
 import WhiteMode from '../../public/icons/white.svg';
@@ -9,7 +9,6 @@ import useScrollTop from '../../hooks/useScrollTop';
 const tabs: {
   name?: string;
   link?: string;
-  icon?: ReactNode;
 }[] = [
   {
     link: '/article',
@@ -18,11 +17,11 @@ const tabs: {
   {
     link: '/tags',
     name: '标签'
-  },
-  {
-    link: '/time-line',
-    name: '时间线'
   }
+  // {
+  //   link: '/time-line',
+  //   name: '时间线'
+  // }
 ];
 
 const Header: React.FC = () => {

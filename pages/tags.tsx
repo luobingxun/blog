@@ -1,5 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import Layout from '../components/Layout';
 import { getColor } from '../libs/getColor';
 import { getHomeDescription } from '../libs/getHomeDescription';
@@ -7,17 +9,31 @@ import { getTagsData } from '../libs/getTagsData';
 import type { StaticDataProps } from '../types/interface';
 
 const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsData, tagsColors }) => {
+  const { query } = useRouter();
+
   const handleClick = tag => () => {
     const title: HTMLHtmlElement = document.querySelector(`h3[id="${tag}"]`);
     window.scrollTo({
-      top: title.offsetTop + 300
+      top: title.offsetTop + 220
     });
   };
+
+  useEffect(() => {
+    query.tag && handleClick(query.tag)();
+  }, []);
 
   return (
     <Layout description="" keywords="" title="" BGTitle={<h1 className="tags-title">标签</h1>}>
       <div className="tags-container common-animation">
-        <h1 className="tags-container-title ">标签</h1>
+        <div className="border-b border-black mx-4">
+          <h1 className="tags-container-title">已经存在的标签</h1>
+          <div className="py-10 px-4">
+            <p className="py-1">—— 以下为已经写过文章中存在的标签</p>
+            <p className="py-1">—— 可以通过标签检索对应的文章</p>
+            <p className="py-1">—— 每篇文章可能会包含在不同的标签中</p>
+          </div>
+        </div>
+
         <div className="mx-8 mt-20">
           <div className="text-center">
             {tagsData.map((v, idx) => (
@@ -33,24 +49,20 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
           </div>
 
           {tagsColors.length === tagsData.length && (
-            <ol className="list-none mt-20">
+            <ol className="mx-8 list-none mt-20">
               {tagsData.map((v, idx) => (
                 <li key={v.tag}>
-                  <div className="flex items-center clear-left">
-                    <span className="flex-1 h-px bg-gray-200"></span>
-                    <h3
-                      className="tags-container-tag"
-                      style={{ color: tagsColors[idx], scrollPaddingTop: 70 }}
-                      id={v.tag}
-                    >
-                      {v.tag}
-                    </h3>
-                    <span className="flex-1 h-px bg-gray-100"></span>
-                  </div>
-
+                  <span className="mr-2">#</span>
+                  <h3
+                    className="tags-container-tag"
+                    style={{ color: tagsColors[idx], scrollPaddingTop: 70 }}
+                    id={v.tag}
+                  >
+                    {v.tag}
+                  </h3>
                   <ol className="list-disc py-8">
                     {v.info.map(i => (
-                      <li key={i.id} style={{ color: tagsColors[idx] }}>
+                      <li key={i.id}>
                         <Link href="/[id]" as={`/${i.id}`}>
                           <a className="tags-article-link">{i.title}</a>
                         </Link>

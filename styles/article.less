@@ -1,6 +1,6 @@
 @media (min-width: 1200px) {
   .article-panel {
-    width: 1015px;
+    width: 800px;
   }
 }
 
@@ -11,22 +11,7 @@
 
   .article {
     &-wrapper {
-      @apply flex m-auto z-10 my-4;
-    }
-
-    &-list {
-      @apply mx-2 md:mx-4 flex-1 bg-white rounded flex-1;
-
-      &-title {
-        @apply text-base p-4 border-b border-gray-200;
-      }
-    }
-
-    &-side {
-      @apply hidden md:block w-60 h-80 bg-white sticky top-24 rounded divide-y;
-      &-item {
-        @apply py-2 px-4 w-full truncate text-gray-600 hover:bg-gray-50 flex flex-col justify-center;
-      }
+      @apply m-auto z-10 my-4;
     }
   }
 }
