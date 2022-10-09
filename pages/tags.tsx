@@ -12,7 +12,7 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
   const { query } = useRouter();
 
   const handleClick = tag => () => {
-    const title: HTMLHtmlElement = document.querySelector(`h3[id="${tag}"]`);
+    const title: HTMLHtmlElement = document.querySelector(`div[id="${tag}"]`);
     window.scrollTo({
       top: title.offsetTop + 220
     });
@@ -23,18 +23,23 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
   }, []);
 
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="tags-title">标签</h1>}>
+    <Layout
+      description=""
+      keywords=""
+      title=""
+      BGTitle={<h1 className="tags-title">经验丰富的人，往往只知其然而不知其所以然。</h1>}
+    >
       <div className="tags-container common-animation">
-        <div className="border-b border-black mx-4">
+        <div className="border-b border-black">
           <h1 className="tags-container-title">已经存在的标签</h1>
-          <div className="py-10 px-4">
+          <div className="py-10">
             <p className="py-1">—— 以下为已经写过文章中存在的标签</p>
             <p className="py-1">—— 可以通过标签检索对应的文章</p>
             <p className="py-1">—— 每篇文章可能会包含在不同的标签中</p>
           </div>
         </div>
 
-        <div className="mx-8 mt-20">
+        <div className="mt-20 ">
           <div className="text-center">
             {tagsData.map((v, idx) => (
               <a
@@ -49,26 +54,26 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
           </div>
 
           {tagsColors.length === tagsData.length && (
-            <ol className="md:mx-8 list-none mt-20 ">
+            <ol className=" list-none mt-20">
               {tagsData.map((v, idx) => (
-                <li key={v.tag}>
-                  <span className="mr-2">#</span>
-                  <h3
-                    className="tags-container-tag"
-                    style={{ color: tagsColors[idx], scrollPaddingTop: 70 }}
-                    id={v.tag}
-                  >
-                    {v.tag}
-                  </h3>
-                  <ol className="list-disc py-8 px-3">
-                    {v.info.map(i => (
-                      <li key={i.id} className="inline-block">
-                        <Link href="/[id]" as={`/${i.id}`}>
-                          <a className="tags-article-link ">{i.title}</a>
-                        </Link>
-                      </li>
-                    ))}
-                  </ol>
+                <li key={v.tag} className="bg-gray-50 my-14 rounded" style={{ backgroundColor: '#f8f8f8' }}>
+                  <div className="relative" id={v.tag}>
+                    <h3
+                      className="tags-container-tag absolute -top-4 left-2"
+                      style={{ color: tagsColors[idx], backgroundColor: '#f8f8f8' }}
+                    >
+                      {v.tag}
+                    </h3>
+                    <ol className="list-disc py-8 px-3">
+                      {v.info.map(i => (
+                        <li key={i.id} className="inline-block">
+                          <Link href="/[id]" as={`/${i.id}`}>
+                            <a className="tags-article-link ">{i.title}</a>
+                          </Link>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                 </li>
               ))}
             </ol>

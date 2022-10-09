@@ -7,7 +7,12 @@ import type { StaticDataProps } from '../types/interface';
 
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ articleData }) => {
   return (
-    <Layout description="" keywords="" title="" BGTitle={<h1 className="article-title">文章</h1>}>
+    <Layout
+      description=""
+      keywords=""
+      title=""
+      BGTitle={<h1 className="article-title">如果你想攀登高峰，切莫把彩虹当作梯子。</h1>}
+    >
       <div className="article-wrapper common-animation article-panel">
         <div className="border-b border-black mx-2">
           <h1 className="article-list-title">我写过的文章</h1>

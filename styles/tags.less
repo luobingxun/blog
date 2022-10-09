@@ -6,15 +6,15 @@
 
 @layer components {
   .tags-title {
-    @apply text-white text-xl md:text-3xl;
+    @apply text-white text-xl md:text-5xl;
   }
 
   .tags {
     &-container {
-      @apply mx-2 md:mx-auto  z-10 my-4 rounded tag-panel;
+      @apply mx-2 md:mx-auto  z-10 my-4 rounded tag-panel md:px-4;
 
       &-title {
-        @apply text-3xl p-4;
+        @apply text-3xl py-4;
       }
 
       &-link {
@@ -28,7 +28,7 @@
     }
 
     &-article-link {
-      @apply py-2  px-4 m-2  font-normal text-sm  box-border  mb-3 cursor-pointer px-4 mx-2 bg-gray-100 rounded
+      @apply py-2 px-4 m-2  font-normal text-sm  box-border cursor-pointer px-4 bg-gray-200 rounded
       hover:text-red-600 transform hover:scale-105 inline-block;
     }
   }

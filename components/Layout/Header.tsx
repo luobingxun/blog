@@ -18,10 +18,6 @@ const tabs: {
     link: '/tags',
     name: '标签'
   }
-  // {
-  //   link: '/time-line',
-  //   name: '时间线'
-  // }
 ];
 
 const Header: React.FC = () => {
