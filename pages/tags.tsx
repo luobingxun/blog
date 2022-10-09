@@ -49,7 +49,7 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
           </div>
 
           {tagsColors.length === tagsData.length && (
-            <ol className="mx-8 list-none mt-20">
+            <ol className="md:mx-8 list-none mt-20 ">
               {tagsData.map((v, idx) => (
                 <li key={v.tag}>
                   <span className="mr-2">#</span>
@@ -60,11 +60,11 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
                   >
                     {v.tag}
                   </h3>
-                  <ol className="list-disc py-8">
+                  <ol className="list-disc py-8 px-3">
                     {v.info.map(i => (
-                      <li key={i.id}>
+                      <li key={i.id} className="inline-block">
                         <Link href="/[id]" as={`/${i.id}`}>
-                          <a className="tags-article-link">{i.title}</a>
+                          <a className="tags-article-link ">{i.title}</a>
                         </Link>
                       </li>
                     ))}

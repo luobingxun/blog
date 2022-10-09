@@ -26,12 +26,12 @@ const Article: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ con
         <article className="article">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </article>
-        <nav className="category">
+        {/* <nav className="category">
           <h3 className="category-title">目录</h3>
           <div className="category-nav">
             <MarkNav headingTopOffset={-300} className="toc-list" source={content} ordered={false} />
           </div>
-        </nav>
+        </nav> */}
       </div>
     </Layout>
   );
