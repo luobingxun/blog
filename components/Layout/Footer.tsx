@@ -7,11 +7,11 @@ const Footer: React.FC = () => {
       <div className="text-center">
         © 2022 | Proudly powered by&nbsp;
         <Link href="https://www.nextjs.cn/">
-          <a className="underline"> NEXT </a>
+          <a className="underline text-red-600"> NEXT </a>
         </Link>
         &nbsp;Theme by&nbsp;
         <Link href="https://www.tailwindcss.cn/">
-          <a className="underline"> Tailwind </a>
+          <a className="underline text-red-600"> Tailwind </a>
         </Link>
       </div>
     </footer>

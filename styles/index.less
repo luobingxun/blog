@@ -5,7 +5,6 @@
 @import './[id].less';
 @import './article.less';
 @import './tags.less';
-@import '../package/timeline/css/timeline.css';
 @import '../components/index.less';
 
 @layer base {
@@ -14,19 +13,20 @@
     position: relative;
     margin: 0;
     padding: 0;
-    // background-color: #f4f6f5;
+    @apply dark:bg-body-bg dark:text-white;
   }
 
   pre > code {
-    background-color: #1d1d25 !important;
-    @apply font-light;
+    @apply font-light bg-l-pre-bg dark:bg-d-pre-bg !important;
   }
+
+ 
 
   ol {
     @apply list-inside list-disc;
 
     p {
-      @apply inline-block;
+      @apply inline-block dark:text-white;
     }
   }
 
@@ -62,6 +62,12 @@
   .btn {
     @apply border-2 border-white h-8 w-20 text-sm md:h-12 md:w-24 rounded-lg;
   }
+
+  .article {
+    p{
+     @apply dark:text-white;
+    }
+   }
 }
 
 @layer utilities {

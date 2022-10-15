@@ -14,7 +14,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ articl
       BGTitle={<h1 className="article-title">如果你想攀登高峰，切莫把彩虹当作梯子。</h1>}
     >
       <div className="article-wrapper common-animation article-panel">
-        <div className="border-b border-black mx-2">
+        <div className="border-b border-black dark:border-white mx-2">
           <h1 className="article-list-title">我写过的文章</h1>
           <div className="py-11">
             <p className="py-1">—— 以下下是我写过的一些文章，希望对你有帮助</p>

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import BlackMode from '../../public/icons/black.svg';
 import WhiteMode from '../../public/icons/white.svg';
 import GitHub from '../../public/icons/github.svg';
 import classnames from 'classnames';
 import useScrollTop from '../../hooks/useScrollTop';
+import { ThemeContext } from '../../theme/ThemeProvider';
 
 const tabs: {
   name?: string;
@@ -21,13 +22,12 @@ const tabs: {
 ];
 
 const Header: React.FC = () => {
-  const [isDark, setIsDark] = useState(true);
+  const { isHeaderScrollTop } = useScrollTop();
+  const { changeTheme, isDark } = useContext(ThemeContext);
 
   const onClick = () => {
-    setIsDark(!isDark);
+    changeTheme();
   };
-
-  const { isHeaderScrollTop } = useScrollTop();
 
   return (
     <header

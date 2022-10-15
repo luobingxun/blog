@@ -12,9 +12,8 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
   const { query } = useRouter();
 
   const handleClick = tag => () => {
-    const title: HTMLHtmlElement = document.querySelector(`div[id="${tag}"]`);
     window.scrollTo({
-      top: title.offsetTop + 220
+      top: (document.querySelector(`div[id="${tag}"]`) as HTMLDivElement).offsetTop + 220
     });
   };
 
@@ -30,7 +29,7 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
       BGTitle={<h1 className="tags-title">经验丰富的人，往往只知其然而不知其所以然。</h1>}
     >
       <div className="tags-container common-animation">
-        <div className="border-b border-black">
+        <div className="border-b border-black dark:border-white">
           <h1 className="tags-container-title">已经存在的标签</h1>
           <div className="py-10">
             <p className="py-1">—— 以下为已经写过文章中存在的标签</p>
@@ -54,13 +53,13 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
           </div>
 
           {tagsColors.length === tagsData.length && (
-            <ol className=" list-none mt-20">
+            <ol className="list-none mt-20">
               {tagsData.map((v, idx) => (
-                <li key={v.tag} className="bg-gray-50 my-14 rounded" style={{ backgroundColor: '#f8f8f8' }}>
+                <li key={v.tag} className="bg-l-article-bg dark:bg-d-article-bg  my-14 rounded ">
                   <div className="relative" id={v.tag}>
                     <h3
-                      className="tags-container-tag absolute -top-4 left-2"
-                      style={{ color: tagsColors[idx], backgroundColor: '#f8f8f8' }}
+                      className="tags-container-tag absolute -top-4 left-2 bg-l-article-bg"
+                      style={{ color: tagsColors[idx] }}
                     >
                       {v.tag}
                     </h3>
@@ -68,7 +67,7 @@ const Tags: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ tagsDa
                       {v.info.map(i => (
                         <li key={i.id} className="inline-block">
                           <Link href="/[id]" as={`/${i.id}`}>
-                            <a className="tags-article-link ">{i.title}</a>
+                            <a className="tags-article-link">{i.title}</a>
                           </Link>
                         </li>
                       ))}

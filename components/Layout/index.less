@@ -1,12 +1,12 @@
 @layer components {
   .header {
-    @apply h-20 w-full fixed z-10 duration-700;
+    @apply h-20 w-full fixed z-10 duration-700 dark:text-white;
     &-is-top {
       @apply bg-none text-white;
     }
 
     &-not-top {
-      @apply text-black bg-white shadow-lg;
+      @apply text-black bg-white shadow-lg dark:bg-header-bg;
     }
 
     &-nav {
@@ -79,7 +79,7 @@
   }
 
   .footer {
-    @apply h-28 bg-gray-100 shadow-lg flex justify-center items-center;
+    @apply h-28 bg-gray-100 shadow-lg flex justify-center items-center dark:bg-footer-bg dark:text-white;
   }
 }
 

@@ -9,8 +9,7 @@
   }
   .description {
     &-container {
-      background-color: #f8f8f8;
-      @apply rounded-lg px-8 py-6 my-6;
+      @apply rounded-lg px-8 py-6 my-6 bg-l-article-bg dark:bg-d-article-bg;
 
       &-title{
         @apply text-xl font-semibold mb-2 pt-4 truncate hover:text-red-600;
@@ -21,11 +20,11 @@
       }
 
       &-tag{
-        @apply inline-block mb-2 px-2 py-1 align-middle text-xs mr-1 bg-gray-200 rounded hover:underline cursor-pointer;
+        @apply inline-block mb-2 px-2 py-1 align-middle text-xs mr-1 bg-gray-200 rounded hover:underline cursor-pointer dark:bg-gray-400;
       }
 
       &-note {
-        @apply mb-4 text-sm text-gray-600;
+        @apply mb-4 text-sm text-gray-600 dark:text-white;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
